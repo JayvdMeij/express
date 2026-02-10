@@ -14,7 +14,7 @@ app.use((req, res) => {
 })
 
 
-// random comment
+
 app.listen(port, () => {
   console.log(`Server draait op http://localhost:${port}`)
 })

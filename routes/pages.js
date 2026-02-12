@@ -16,6 +16,20 @@ router.get('/contact', (req, res) => {
   res.render('pages/contact')
 })
 
+router.post('/contact', (req, res) => {
+  const name = req.body.name
+  const email = req.body.email
+  const message = req.body.message
+
+  var contactMessage = `bericht van ${name} - ${email}: ${message}`
+
+  console.log(contactMessage)
+
+  res.render('pages/contact', {
+    success: `Bedankt voor je bericht, ${name}! We nemen zo snel mogelijk contact met je op.`
+  })
+})
+
 router.get('/registratie', (req, res) => {
   res.render('pages/registratie', {
     error: null

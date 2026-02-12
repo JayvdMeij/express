@@ -1,0 +1,13 @@
+<%- include('../partials/header')%>
+
+    <h1>registratie</h1>
+
+    <% if (error) { %>
+        <p>
+            <%= error %>
+        </p>
+        <% } %>
+
+<%- include('../partials/reg-form') %>
+
+<%- include('../partials/footer') %>

@@ -5,19 +5,21 @@ const data = require('../credentials.json')
 
 
 router.get('/', (req, res) => {
-  res.render('index')
+  res.render('pages/index')
 })
 
 router.get('/about', (req, res) => {
-  res.render('about')
+  res.render('pages/about')
 })
 
 router.get('/contact', (req, res) => {
-  res.render('contact')
+  res.render('pages/contact')
 })
 
 router.get('/registratie', (req, res) => {
-  res.render('registratie')
+  res.render('pages/registratie', {
+    error: null
+  })
 })
 
 router.post('/registratie', (req, res) => {
@@ -29,11 +31,13 @@ router.post('/registratie', (req, res) => {
   )
 
   if (user) {
-    res.render('welcome', { username })
+    res.render('pages/welcome', { username })
   } else {
-    res.render('error')
+    res.render('pages/registratie', {
+      error: 'Ongeldige gebruikersnaam of wachtwoord'
+    })
   }
-
 })
+
 
 module.exports = router

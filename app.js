@@ -8,9 +8,8 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// routes
+
 app.use('/', require('./routes/pages'))
-app.use('/api', require('./routes/api'))
 
 app.use((req, res) => {
   res.status(404).render('404')

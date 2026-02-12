@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const users = require('../credentials.json')
+const data = require('../credentials.json')
 
 
 router.get('/', (req, res) => {
@@ -24,7 +24,7 @@ router.post('/registratie', (req, res) => {
   const username = req.body.username
   const password = req.body.password
 
-  const user = users.find(u =>
+  const user = data.users.find(u =>
     u.username === username && u.password === password
   )
 
